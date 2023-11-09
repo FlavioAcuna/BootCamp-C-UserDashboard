@@ -1,0 +1,33 @@
+@model LoginUser
+@await Html.PartialAsync("Partials/_Navbar1")
+<div class="container">
+    <main role="main" class="pb-3">
+        <div class="container">
+            <div class="row">
+                <h2>Signing</h2>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <form asp-action="ValidaLogin" method="post" asp-controller="Home">
+                        <div class="row">
+                            <label asp-for="EmailLogin">Email Address: </label>
+                        </div>
+                        <div class="row-1">
+                            <input asp-for="EmailLogin">
+                            <span asp-validation-for="EmailLogin"></span>
+                        </div>
+                        <div class="row">
+                            <label asp-for="PasswordLogin">Password: </label>
+                        </div>
+                        <div class="row-1">
+                            <input asp-for="PasswordLogin">
+                            <span asp-validation-for="PasswordLogin"></span>
+                        </div>
+                        <button class="my-3 btn btn-success">Sig In</button>
+                    </form>
+                    <a asp-action="RegisterView" asp-controller="Home" asp-area="">Don't have an account? Register.</a>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
